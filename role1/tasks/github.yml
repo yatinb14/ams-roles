@@ -1,0 +1,21 @@
+---
+- name: Create a Directory
+  file:
+   name: /home/thinknyx/AMS/ams
+   state: directory
+
+   #- name: git clone
+   #git:
+   #repo: 'https://{{ user }}:{{ password }}@github.com/thinknyx-technologies-llp/ams.git'
+   #dest: /home/thinknyx/AMS/ams/
+   #force: yes    
+ 
+
+   
+
+- name:  AMS script
+  shell: nohup /home/thinknyx/AMS/ams/oldamsstart.sh start 
+   
+
+
+

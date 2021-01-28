@@ -1,0 +1,76 @@
+---
+- name: install apache2
+  apt: 
+   name: apache2 
+   update_cache: yes 
+   state: present
+
+- name: restart service
+  service:
+   name: apache2
+   state: restarted
+
+- name: install Git
+  apt:
+   update_cache: true       
+   name: git
+   state: present
+   
+- name: Installing redis
+  apt:
+   name: redis-server
+   state: present
+   update_cache: true
+
+- name: ensure redis service is restarted
+  service:
+   name: redis-server
+   state: restarted
+
+- name: Install python pip
+  apt:
+   update_cache: true
+   name: python3-pip
+   state: present
+   
+
+- name: Installing imp libraries
+  pip:
+   executable: pip3
+   name: ['flask-mysqldb', 'flask', 'virtualenv', 'flask-mysql', 'flask-wtf', 'flask-mail', 'flask-wkhtmltopdf', 'flask-bcrypt', 'flask-session', 'utils', 'pdfkit', 'numpy', 'pandas', 'requests', 'wkhtmltopdf' , 'jsonify', 'email-validator', 'setuptools', 'mysql-connector-python']
+
+- name: mysql tasks
+  include_tasks: mysql.yml
+    
+- name: git tasks
+  include_tasks: github.yml
+
+- name: Install python-pip
+  when: ansible_distribution == "CentOS" 
+  yum:
+   update_cache: yes
+   name: "{{ item }}"
+   state: present
+  loop:
+   - epel-release
+   - python-pip
+   - python3-pip  
+   - python3-devel
+   - mysql-devel
+   - python-setuptools
+   - MySQL-python
+
+- name: cache 
+  when: ansible_distribution == "CentOS" 
+  yum:
+   update_cache: true
+
+
+- name: redis on centos
+  when: ansible_distribution == "CentOS"
+  yum:
+   name: ['epel-release', 'redis']
+   state: present
+   update_cache: true
+    
+

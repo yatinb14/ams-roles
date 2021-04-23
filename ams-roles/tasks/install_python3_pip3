@@ -1,0 +1,12 @@
+
+- name: Installing python3
+  apt:
+   name: python3.8
+   state: present
+   update_cache: true
+
+- name: Installing pip3
+  apt:
+   update_cache: true
+   name: python3-pip
+   state: present

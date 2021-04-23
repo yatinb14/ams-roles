@@ -1,0 +1,4 @@
+- name: Installing imp libraries
+  pip:
+   executable: pip3
+   name: ['pdfkit','redis','flask-mysqldb', 'flask', 'virtualenv', 'flask-mysql', 'flask-wtf', 'flask-mail', 'flask-wkhtmltopdf', 'flask-bcrypt', 'flask-session', 'utils', 'pdfkit', 'numpy', 'pandas', 'requests', 'wkhtmltopdf' , 'jsonify', 'email-validator', 'setuptools', 'mysql-connector-python']

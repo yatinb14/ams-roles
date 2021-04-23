@@ -1,2 +1,6 @@
 ---
-# handlers file for ams-roles
+- name: SQL restart
+  service:
+   name: mysql
+   state: restarted
+

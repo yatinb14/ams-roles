@@ -1,2 +1,4 @@
 ---
-# defaults file for ams-roles
+mysqluser: flask
+mysqlpass: password
+

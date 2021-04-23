@@ -1,0 +1,24 @@
+---
+
+- name: db dumpfile
+  copy:
+   src: flasktab.sql
+   dest: /tmp
+
+- name: databse creating
+  mysql_db:
+   name: flaskdemo
+   state: present 
+   login_unix_socket: /var/run/mysqld/mysqld.sock
+  notify: SQL restart
+
+
+- name: Import new Db
+  mysql_db:
+   name: flaskdemo
+   login_user: "{{ mysqluser }}"
+   login_password: "{{ mysqlpass }}"
+   state: import
+   target: /tmp/flasktab.sql
+  ignore_errors: yes
+  notify: SQL restart  

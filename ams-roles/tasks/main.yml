@@ -1,2 +1,13 @@
 ---
-# tasks file for ams-roles
+- include_tasks: install_redis.yml
+- include_tasks: install_wkhtml.yml
+- include_tasks: install_python3_pip3.yml
+- include_tasks: install_and_start_mysql.yml
+- include_tasks: install_python_utilities.yml
+- include_tasks: create_mysqluser_copy_credentials.yml
+- include_tasks: create_db_and_export_dump.yml
+- include_tasks: install_git.yml
+- include_tasks: clone_repo.yml
+
+- name:  Executing shell script
+  shell: /home/thinknyx/AMS/ams/oldamsstart.sh start 

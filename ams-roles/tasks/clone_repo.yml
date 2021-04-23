@@ -1,0 +1,15 @@
+---
+- name: Create a Directory
+  file:
+   name: /home/thinknyx/AMS/ams
+   state: directory
+
+   #- name: git clone
+   #git:
+   #repo: 'https://github.com/thinknyx-technologies-llp/ams.git'
+   #dest: /home/thinknyx/AMS/ams/
+   #version: restructuring
+   #accept_hostkey: yes
+   #force: yes    
+
+

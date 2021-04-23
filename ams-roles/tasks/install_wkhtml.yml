@@ -1,0 +1,6 @@
+---
+- name: install wkhtml
+  apt:
+   name: wkhtmltopdf
+   state: present   
+          

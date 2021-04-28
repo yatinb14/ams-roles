@@ -32,6 +32,6 @@
                  "ansible-playbook ams.yml"
 
 - Prerquisites for the above process
-  Install ansible using: sudo apt-get update -y && sudo apt-get install -y ansible
-  cd ~/ && git clone https://github.com/yatinb14/ams-roles.git
-  cd ams-roles/
+  1) Install ansible using: sudo apt-get update -y && sudo apt-get install -y ansible
+  2) cd ~/ && git clone https://github.com/yatinb14/ams-roles.git
+  3) cd ams-roles/

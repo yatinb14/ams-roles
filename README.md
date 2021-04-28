@@ -31,3 +31,7 @@
 - After all this process move out of ams-roles folder execute your main file "ams.yml" for making app live using command
                  "ansible-playbook ams.yml"
 
+- Prerquisites for the above process
+  Install ansible using: sudo apt-get update -y && sudo apt-get install -y ansible
+  cd ~/ && git clone https://github.com/yatinb14/ams-roles.git
+  cd ams-roles/

@@ -25,7 +25,7 @@
 - In cd ams-roles/defaults a "main.yml" is present in which you can define your variables.
 
 
-- Create your sql dump in system
+- Create your sql dump in system->
   This is a manual step, create a vi flasktab.sql and paste your sql dump/code here
 
 - After all this process move out of ams-roles folder execute your main file "ams.yml" for making app live by command

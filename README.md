@@ -19,9 +19,15 @@
 8) "create_mysqluser_copy_credentials.yml" used to create a mysql user and copy user credentials.
 9) "create_db_and_export_dump.yml " used to create a database and to import the databse.
 10) Last is "main.yml"-> we have defined all the the above .yml files and a small script in "main.yml" because when we fire our playbook "ams.yml" which is kept outside "ams-roles" folder , it will first look for main.yml file inside the tasks folder.
-# Copy your sql dump into /tmp directory
-flasktab.sql
 
-# Then create and execute your main file "ams.yml" for making app live by firing
-ansible-playbook ams.yml
+- In  cd ams-roles/handlers you can see the "main.yml", this file is basically used for restarting mysql-server.
+
+- In cd ams-roles/defaults a "main.yml" is present in which you can define your variables.
+
+
+- Create your sql dump in system
+  This is a manual step, create a vi flasktab.sql and paste your sql dump/code here
+
+- After all this process move out of ams-roles folder execute your main file "ams.yml" for making app live by command
+  ansible-playbook ams.yml
 

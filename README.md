@@ -2,7 +2,7 @@
   This repo contains role for installing and make AMS app live
 
 - First create a folder named "ams-roles" for roles using below command
-  "ansible-galaxy init ams-roles"
+                     "ansible-galaxy init ams-roles"
 
 - Then inside "ams-roles" you can check many folders have been created and inside these
   eg: tasks,handlers etc.. we create yml playbooks to get the specific output.
@@ -28,6 +28,6 @@
 - Create your sql dump in system->
   This is a manual step, create a vi flasktab.sql and paste your sql dump/code here
 
-- After all this process move out of ams-roles folder execute your main file "ams.yml" for making app live by command
- "ansible-playbook ams.yml"
+- After all this process move out of ams-roles folder execute your main file "ams.yml" for making app live using command
+                 "ansible-playbook ams.yml"
 
